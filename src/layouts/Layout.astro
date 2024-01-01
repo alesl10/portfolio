@@ -1,0 +1,79 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/footer.astro";
+import "@fontsource-variable/onest";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="relative">
+		<video
+			class="object-cover -z-20 w-full h-full fixed"
+			autoplay
+			loop
+			src="../video.mp4"></video>
+		<div class="bg-yellow bg-opacity-20 -z-10 w-full h-full fixed"></div>
+		<Header />
+		<slot />
+		<Footer />
+		<script
+			is:inline
+			src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+		></script>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		color-scheme: ligth dark;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 100vh;
+		gap: 2rem;
+		font-family: "Onest Variable", sans-serif;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	.typing {
+		animation:
+			animacion 2.5s steps(35),
+			transparen 0.5s step-end infinite alternate;
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		border-right: 3px solid;
+	}
+
+	@keyframes animacion {
+		from {
+			width: 0%;
+		}
+	}
+
+	@keyframes transparen {
+		50% {
+			border-color: transparent;
+		}
+	}
+</style>

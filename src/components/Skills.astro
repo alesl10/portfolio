@@ -1,0 +1,24 @@
+---
+const icons = [
+    { icon: "../icons/html-5-svgrepo-com.svg", name: "html" },
+    { icon: "../icons/css-3-svgrepo-com.svg", name: "css" },
+    {
+        icon: "../icons/javascript-svgrepo-com.svg",
+        name: "javascript",
+    },
+    { icon: "../icons/github-color-svgrepo-com.svg", name: "github" },
+    { icon: "../icons/react-svgrepo-com.svg", name: "react" },
+    { icon: "../icons/vite-svgrepo-com.svg", name: "vite" },
+    { icon: "../icons/astro-svgrepo-com.svg", name: "astro" },
+    { icon: "../icons/tailwind-svgrepo-com.svg", name: "tailwind" },
+    { icon: "../icons/mongodb-svgrepo-com.svg", name: "mongodb" },
+    { icon: "../icons/node-js-svgrepo-com.svg", name: "node js" },
+];
+---
+
+<div class="flex flex-wrap items-center justify-center gap-5 p-5">
+    {icons.map((i) => <img
+     class="size-[4rem] hover:scale-110 transition-transform" 
+     src={i.icon} 
+     alt={i.name} />)}
+</div>

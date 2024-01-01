@@ -1,0 +1,104 @@
+---
+import Habilidades from "../components/Habilidades.astro";
+import Layout from "../layouts/Layout.astro";
+import Proyects from "../components/Proyects.astro";
+import Skils from "../components/Skills.astro";
+---
+
+<Layout
+	title="Lopez Alexis Ariel - desarrollador y programador web - portfolio"
+	description="Desarrollador Web Full Stack, Argentino viviendo en Buenos Aires. "
+>
+	<main>
+		<div class="grid grid-cols-10 px-20 gap-6 m-4">
+			<section
+				class="col-span-10 border-4 border-yellow-300 rounded-lg mt-16 p-5
+				flex items-center justify-center gap-52
+				 bg-black bg-opacity-55"
+			>
+				<img
+					class="rounded-full size-60 h-auto"
+					src="../perfil.jpg"
+					alt="foto"
+				/>
+
+				<div>
+					<h1 class="font-bold text-xl typing">
+						<span class="opacity-85 text-2xl"
+							>Hola, mi nombre es</span
+						>
+						<span class="text-blue-300 text-4xl "
+							>Alexis Lopez</span
+						>
+					</h1>
+					<h2 class="text-yellow-400 text-3xl">
+						soy Desarrollador Web Full Stack
+					</h2>
+
+					<button
+						class="bg-yellow-300 rounded-full px-3 text-blue-500 border-blue-900 border-solid border-2 mt-1 hover:bg-blue-400 hover:text-yellow-300 font-semibold"
+						><a
+							href="https://www.linkedin.com/in/alexis-lopez-709965180/"
+							target="_blank">Linkedin</a
+						></button
+					>
+					<button
+						class="bg-yellow-300 rounded-full px-3 text-blue-500 border-blue-900 border-solid border-2 mt-1 hover:bg-blue-400 hover:text-yellow-300 font-semibold"
+						><a href="https://github.com/alesl10" target="_blank"
+							>GitHub</a
+						></button
+					>
+					<button
+						class="bg-yellow-300 rounded-full px-3 text-blue-500 border-blue-900 border-solid border-2 mt-1 hover:bg-blue-400 hover:text-yellow-300 font-semibold"
+						><a href="mailto:ale_sl10@live.com.ar" target="_blank"
+							>ale_sl10@live.com.ar</a
+						></button
+					>
+					<Habilidades />
+				</div>
+			</section>
+
+			<section
+				id="about"
+				class="border-4 border-yellow-300 rounded-lg col-span-3
+				flex items-start p-5 flex-col
+				bg-black bg-opacity-55"
+			>
+				<div class="flex w-auto mt-10 gap-10">
+					<h2 class="font-bold text-2xl text-blue-300">Sobre mi</h2>
+				</div>
+				<div class="flex text-pretty text-lg">
+					<span class="opacity-85"
+						>Apasionado por las nuevas tecnologías y principalmente
+						en el mundo del desarrollo y programacion de
+						aplicaciones web. Siempre predispuesto a explorar nuevos
+						caminos y ampliar mis conocimientos.</span
+					>
+				</div>
+			</section>
+
+			<section
+				id="projects"
+				class="border-4 border-yellow-300 rounded-lg col-span-7
+				 p-5
+				bg-black bg-opacity-55"
+			>
+				<h2 class="font-bold text-2xl text-blue-300">Proyectos</h2>
+				<div>
+					<Proyects />
+				</div>
+			</section>
+
+			<section
+				id="skills"
+				class="border-4 border-yellow-300 rounded-lg col-span-10
+				flex items-center flex-col p-5
+				bg-black bg-opacity-55"
+			>
+				<h2 class="font-bold text-2xl text-blue-300">Habilidades</h2>
+				<Skils />
+			</section>
+		</div>
+		
+	</main>
+</Layout>
