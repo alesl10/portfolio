@@ -1,16 +1,28 @@
 ---
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "../../@/components/ui/carousel";
+
 const proyectos = [
     {
-        name: "Proyecto 1",
-        link: "https://proyecto1.com",
+        name: "Task app CABJ",
+        link: "https://task-app-client-six.vercel.app/",
         description:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus rem quisquam totam velit amet sed est sunt, dicta at mollitia, maxime dolorem deserunt veritatis! Numquam quidem consectetur modi ut deleniti.",
-        image: "../pr4.jpg",
+            "Una aplicacion sencilla donde se permite crear un usuario y poder manejar tareas pendientes. Te permite crear, eliminar y modificar estados de cada tarea.",
+        image: "../TaskApp.jpg",
         tecno: [
             { icon: "../icons/html-5-svgrepo-com.svg" },
             { icon: "../icons/css-3-svgrepo-com.svg" },
             { icon: "../icons/javascript-svgrepo-com.svg" },
             { icon: "../icons/github-color-svgrepo-com.svg" },
+            { icon: "../icons/mongodb-svgrepo-com.svg" },
+            { icon: "../icons/node-js-svgrepo-com.svg" },
+            { icon: "../icons/react-svgrepo-com.svg" },
+            { icon: "../icons/vite-svgrepo-com.svg" },
         ],
     },
     {
@@ -29,114 +41,102 @@ const proyectos = [
 ];
 ---
 
-<div id="default-carousel" class="relative w-full lg:mt-3" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-        <!-- Items -->
-        {
-            proyectos.map((p) => (
-                <div class="hidden duration-700 ease-in-out  " data-carousel-item>
-                    <img
-                        src={p.image}
-                        class="absolute opacity-70 block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt={p.image}
-                    />
-                    <h3 class="absolute p-3 lg:p-5 text-blue-700 font-bold md:text-lg lg:text-xl">{p.name}</h3>
-                    <div class="absolute flex justify-end items-end z-30 h-full w-full gap-3  lg:gap-5 p-4 ">
-                        {p.tecno.map(t =>
-                            <img class=" size-6 lg:size-10" src={t.icon} alt={t.icon}>
-                            )}
-                    </div>
-                </div>
-            ))
-        }
-    </div>
-    <!-- Slider controls -->
-    <button
-        type="button"
-        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-prev
-    >
-        <span
-            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-        >
-            <svg
-                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-            >
-                <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 1 1 5l4 4"></path>
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button
-        type="button"
-        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-next
-    >
-        <span
-            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-        >
-            <svg
-                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-            >
-                <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 9 4-4-4-4"></path>
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
-</div>
+<Carousel>
+    <CarouselContent>
+        <CarouselItem><div>asdasd</div></CarouselItem>
+        <CarouselItem><div>asdasd</div></CarouselItem>
+        <CarouselItem><div>asdasd</div></CarouselItem>
+    </CarouselContent>
+    <CarouselPrevious />
+    <CarouselNext />
+</Carousel>
 
-<!-- <div class="grid grid-cols-3 gap-20 mt-6">
+<!-- <div
+    id="default-carousel"
+    class="relative w-full lg:mt-3"
+    data-carousel="slide"
+>
+    <!-- Carousel wrapper -->
+<div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <!-- Items -->
     {
         proyectos.map((p) => (
-            <a href={p.link}>
-                <div class=" bg-cover relative w-[200px] h-[200px] flex flex-col justify-between">
+            <div
+                class="hidden duration-700  ease-in-out group  "
+                data-carousel-item
+            >
+                <a href={p.link}>
                     <img
-                        class="w-full h-full object-cover absolute hover:opacity-100 opacity-50 "
                         src={p.image}
-                        alt="imagen proyecto"
+                        class="absolute opacity-70  block w-full -translate-x-1/2 group-hover:opacity-100 -translate-y-1/2 top-1/2 left-1/2  "
+                        alt={p.image}
                     />
-
-                    <div class="z-20">
-                        <h3 class=" ml-4 text-xl text-blue-300 font-bold">
-                            {p.name}
-                        </h3>
+                    <h3 class="absolute p-3 lg:p-5 text-yellow-200 font-bold md:text-lg lg:text-xl">
+                        {p.name}
+                    </h3>
+                    <div class="absolute flex justify-end items-end z-30 h-full w-full gap-3  lg:gap-5 p-4 ">
+                        {p.tecno.map((t) => (
+                            <img
+                                class=" size-6 lg:size-10"
+                                src={t.icon}
+                                alt={t.icon}
+                            />
+                        ))}
                     </div>
-
-                    <div class=" flex justify-between items-end px-5 p-1">
-                        <span class="hidden w-[60%] font-bold">
-                            {p.description}
-                        </span>
-                        <div class="flex justify-end gap-3">
-                            {p.tecno.map((t) => (
-                                <img
-                                    class=" size-5 z-20"
-                                    src={t.icon}
-                                    alt={t.icon}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </a>
+                </a>
+            </div>
         ))
     }
-</div> -->
+</div>
+<!-- Slider controls -->
+<button
+    type="button"
+    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+    data-carousel-prev
+>
+    <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+    >
+        <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+        >
+            <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 1 1 5l4 4"></path>
+        </svg>
+        <span class="sr-only">Previous</span>
+    </span>
+</button>
+<button
+    type="button"
+    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+    data-carousel-next
+>
+    <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+    >
+        <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+        >
+            <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"></path>
+        </svg>
+        <span class="sr-only">Next</span>
+    </span>
+</button>
+-->
