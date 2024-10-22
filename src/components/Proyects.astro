@@ -6,7 +6,7 @@ const proyectos = [
         link: "https://task-app-client-six.vercel.app/",
         description:
             "Una aplicacion sencilla donde se permite crear un usuario y poder manejar tareas pendientes. Te permite crear, eliminar y modificar estados de cada tarea.",
-        image: "../TaskApp.jpg",
+        image: "../TaskApp.webp",
         tecno: [
             { icon: "../icons/html-5-svgrepo-com.svg" },
             { icon: "../icons/css-3-svgrepo-com.svg" },
@@ -19,11 +19,11 @@ const proyectos = [
         ],
     },
     {
-        name: "Proyecto 3",
-        link: "https://proyecto1.com",
+        name: "Desafio Mecanografia",
+        link: "https://typing-game-pied-theta.vercel.app/",
         description:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus rem quisquam totam velit amet sed est sunt, dicta at mollitia, maxime dolorem deserunt veritatis! Numquam quidem consectetur modi ut deleniti.",
-        image: "../pr3.jpg",
+            "Aplicación web sencilla realizada para practicar conceptos de JS, donde se le permite al usuario jugar/probar su velocidad y claridad a la hora de escribir en el teclado",
+        image: "/Mecanografia.webp",
         tecno: [
             { icon: "../icons/html-5-svgrepo-com.svg" },
             { icon: "../icons/css-3-svgrepo-com.svg" },
@@ -36,7 +36,7 @@ const proyectos = [
 
 <div
     id="default-carousel"
-    class="relative w-full lg:mt-3"
+    class="relative w-full lg:mt-3 aspect-auto"
     data-carousel="slide"
 >
     <!-- Carousel wrapper -->
@@ -51,7 +51,7 @@ const proyectos = [
                     <a href={p.link}>
                         <img
                             src={p.image}
-                            class="absolute opacity-70  block w-full -translate-x-1/2 group-hover:opacity-100 -translate-y-1/2 top-1/2 left-1/2  "
+                            class="absolute dark:opacity-70   block w-full -translate-x-1/2 group-hover:saturate-150 dark:group-hover:opacity-100 -translate-y-1/2 top-1/2 left-1/2  "
                             alt={p.image}
                         />
                         <h3 class="absolute p-3 lg:p-5 text-yellow-200 font-bold md:text-lg lg:text-xl">
@@ -60,7 +60,7 @@ const proyectos = [
                         <div class="absolute flex justify-end items-end z-30 h-full w-full gap-3  lg:gap-5 p-4 ">
                             {p.tecno.map((t) => (
                                 <img
-                                    class=" size-6 lg:size-10"
+                                    class="iconP size-6 lg:size-10"
                                     src={t.icon}
                                     alt={t.icon}
                                 />

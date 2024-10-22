@@ -1,6 +1,8 @@
 ---
 import Footer from "../components/footer.astro";
 import "@fontsource-variable/onest";
+import { ChangeMode } from "../components/ChangeMode.jsx";
+
 
 interface Props {
 	title: string;
@@ -11,7 +13,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -20,7 +22,7 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="relative">
+	<body class="relative" id="body">
 		<video
 			class="hidden sm:block object-cover -z-20 w-full h-full fixed"
 			autoplay
@@ -28,13 +30,16 @@ const { title, description } = Astro.props;
 			loop
 			src="../video.webm"></video>
 		<div
-			class="hidden md:block bg-yellow bg-opacity-20 -z-10 w-full h-full fixed"
+			class="hidden md:block bg-gray-400 bg-opacity-20 -z-10 w-full h-full fixed
+			dark:bg-opacity-0
+			"
 		>
 		</div>
 		<div
 			class="fixed sm:hidden inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
 		>
 		</div>
+		<ChangeMode client:load />
 		<slot />
 		<Footer />
 		<script
@@ -59,6 +64,14 @@ const { title, description } = Astro.props;
 
 	html {
 		scroll-behavior: smooth;
+	}
+
+	.icon {
+		filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+	}
+	
+	.iconP {
+		filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
 	}
 
 	.typing {

@@ -1,4 +1,5 @@
 ---
+// Componente principal
 import Habilidades from "../components/Habilidades.astro";
 import Layout from "../layouts/Layout.astro";
 import Proyects from "../components/Proyects.astro";
@@ -13,46 +14,67 @@ import Skils from "../components/Skills.astro";
 		<div class="grid grid-cols-10 md:px-20 gap-6 m-1 md:m-4">
 			<section
 				class="flex-col
-				col-span-10 border-4 border-yellow-300 rounded-lg gap-10 mt-12 md:mt-16 p-5
+				col-span-10 border-4 rounded-lg gap-10 mt-12 md:mt-16 p-5
 				flex items-center lg:justify-center lg:flex-row
 				xl:gap-52
-				 bg-black bg-opacity-55"
+				 bg-gray-300 bg-opacity-80 border-blue-700
+				 dark:bg-black dark:bg-opacity-55 dark:border-yellow-300"
 			>
 				<img
 					class="rounded-full h-auto
-					lg:size-60"
-					src="../perfil.jpg"
+					lg:size-60
+					 border-blue-700 border-4
+					 dark:border-none"
+					src="../FotoPerfil.jpg"
 					alt="foto"
 				/>
 
 				<div>
 					<h1 class="font-bold lg:text-xl typing">
-						<span class="opacity-85 text-xl lg:text-2xl"
+						<span
+							class="opacity-85 text-xl lg:text-2xl
+						dark:text-white
+						text-blue-900"
 							>Hola, mi nombre es</span
 						>
-						<span class="text-blue-300 text-2xl md:text-3xl lg:text-4xl"
+						<span
+							class="dark:text-blue-300
+							text-black
+							text-2xl md:text-3xl lg:text-4xl"
 							>Alexis Lopez</span
 						>
 					</h1>
-					<h2 class="text-yellow-400 text-xl md:text-2xl lg:text-3xl">
+					<h2
+						class="dark:text-yellow-400
+					text-blue-900
+					text-xl md:text-2xl lg:text-3xl"
+					>
 						soy Desarrollador Web Full Stack
 					</h2>
 
 					<button
-						class="hidden md:inline bg-yellow-300 rounded-full text-sm md:text-[16px] px-3 text-blue-500 border-blue-900 border-solid border-2 mt-1 hover:bg-blue-400 hover:text-yellow-300 lg:font-semibold"
+						class="hidden md:inline
+						 dark:bg-yellow-300 dark:text-blue-500 dark:border-blue-900 dark:hover:bg-blue-400 dark:hover:text-yellow-300
+						 bg-blue-900 hover:bg-yellow-500
+						rounded-full text-sm md:text-[16px] px-3 border-solid border-2 mt-1 lg:font-semibold"
 						><a
 							href="https://www.linkedin.com/in/alexis-lopez-709965180/"
 							target="_blank">Linkedin</a
 						></button
 					>
 					<button
-						class="hidden md:inline bg-yellow-300 rounded-full px-3 text-blue-500 text-sm md:text-[16px] border-blue-900 border-solid border-2 mt-1 hover:bg-blue-400 hover:text-yellow-300 lg:font-semibold"
+						class="hidden md:inline
+						 dark:bg-yellow-300 dark:text-blue-500 dark:border-blue-900 dark:hover:bg-blue-400 dark:hover:text-yellow-300
+						 bg-blue-900 hover:bg-yellow-500
+						 rounded-full px-3 text-sm md:text-[16px] border-solid border-2 mt-1 lg:font-semibold"
 						><a href="https://github.com/alesl10" target="_blank"
 							>GitHub</a
 						></button
 					>
 					<button
-						class="hidden md:inline bg-yellow-300 rounded-full px-3 text-blue-500 text-sm md:text-[16px] border-blue-900 border-solid border-2 mt-1 hover:bg-blue-400 hover:text-yellow-300 lg:font-semibold"
+						class="hidden md:inline rounded-full px-3 text-sm md:text-[16px] border-solid border-2 mt-1 lg:font-semibold
+						 dark:bg-yellow-300 dark:text-blue-500 dark:border-blue-900 dark:hover:bg-blue-400 dark:hover:text-yellow-300
+						 bg-blue-900 hover:bg-yellow-500"
 						><a href="mailto:ale_sl10@live.com.ar" target="_blank"
 							>ale_sl10@live.com.ar</a
 						></button
@@ -63,14 +85,23 @@ import Skils from "../components/Skills.astro";
 
 			<section
 				id="about"
-				class="border-4 border-yellow-300 rounded-lg lg:gap-8 col-span-10 xl:col-span-3
+				class="border-4 rounded-lg lg:gap-8 col-span-10 xl:col-span-3
 				flex items-start p-5 flex-col
-				bg-black bg-opacity-55"
+				bg-gray-300 bg-opacity-80 border-blue-700
+				 dark:bg-black dark:bg-opacity-55 dark:border-yellow-300"
 			>
 				<div class="flex w-auto gap-10">
-					<h2 class="font-bold text-2xl text-blue-300">Sobre mí</h2>
+					<h2 class="font-bold text-2xl
+					dark:text-blue-300
+					text-black">
+						Sobre mí
+					</h2>
 				</div>
-				<div class="flex text-balance lg:max-w-[80%] lg:text-xl">
+				<div
+					class="flex text-balance lg:max-w-[80%] lg:text-xl
+				text-blue-900
+				dark:text-white"
+				>
 					<span class="opacity-85"
 						>Apasionado por las nuevas tecnologías y principalmente
 						en el mundo del desarrollo y programación de
@@ -82,11 +113,12 @@ import Skils from "../components/Skills.astro";
 
 			<section
 				id="projects"
-				class="border-4 border-yellow-300 rounded-lg col-span-10 xl:col-span-7
+				class="border-4 rounded-lg col-span-10 xl:col-span-7
 				 p-5
-				bg-black bg-opacity-55"
+				bg-gray-300 bg-opacity-80 border-blue-700
+				 dark:bg-black dark:bg-opacity-55 dark:border-yellow-300"
 			>
-				<h2 class="font-bold text-2xl text-blue-300">Proyectos</h2>
+				<h2 class="font-bold text-2xl dark:text-blue-300 text-black">Proyectos</h2>
 				<div>
 					<Proyects />
 				</div>
@@ -94,11 +126,12 @@ import Skils from "../components/Skills.astro";
 
 			<section
 				id="skills"
-				class="border-4 border-yellow-300 rounded-lg col-span-10
+				class="border-4 rounded-lg col-span-10
 				flex items-center flex-col p-5
-				bg-black bg-opacity-55"
+				bg-gray-300 bg-opacity-80 border-blue-700
+				 dark:bg-black dark:bg-opacity-55 dark:border-yellow-300"
 			>
-				<h2 class="font-bold text-2xl text-blue-300">Habilidades</h2>
+				<h2 class="font-bold text-2xl text-black dark:text-blue-300">Habilidades</h2>
 				<Skils />
 			</section>
 		</div>

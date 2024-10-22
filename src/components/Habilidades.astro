@@ -13,10 +13,10 @@ const icons = [
 ];
 ---
 
-<div class="flex gap-3 mt-5 ">
+<div class="flex gap-3 mt-5  aspect-auto">
     {
         icons.map((i) => (
-            <img class="size-6 hover:scale-110 transition-transform" src={i.icon} alt=`icon ${i.name}` />
+            <img class="icon size-6 hover:scale-110 transition-transform" src={i.icon} alt=`icon ${i.name}` />
         ))
     }
 </div>
