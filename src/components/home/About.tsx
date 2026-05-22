@@ -14,8 +14,8 @@ const LOAD_STEPS = 20
 const LOAD_INTERVAL = 50 // ms — total ~1000ms
 
 const stats = [
-  { value: '3+', label: 'años de experiencia' },
-  { value: '15+', label: 'tecnologías' },
+  { value: '5+', label: 'años de experiencia' },
+  { value: '20+', label: 'tecnologías' },
 ]
 
 type Phase = 'typing' | 'loading' | 'ready'
