@@ -153,16 +153,17 @@ export default function About() {
                   <p className="kbd-label text-green">{'// identity'}</p>
                   <h1 className="mt-2 glow text-green">Alexis López</h1>
                   <p className="mt-2 text-lg md:text-xl text-fg">
-                    Senior Full-Stack Engineer
+                    SSR Backend Engineer | APIs & Distributed Systems
                     <span className="blink-cursor" />
                   </p>
                 </Line>
 
                 <Line>
                   <p className="text-muted max-w-xl">
-                    Diseño y construyo <span className="text-fg">sistemas web escalables</span> de
-                    punta a punta. Me obsesiona la <span className="text-amber">arquitectura limpia</span>,
-                    la performance y el código. · .NET · SQL · Node.js · React ·
+                    Experiencia en disen o y consumo de <span className="text-fg">API REST</span>, arquitectura en capas y Clean Architecture,
+                    manejo de concurrencia, consistencia de datos, control de errores e integracion entre
+                    servicios mediante comunicacion asincronica.
+                    Solida experiencia con bases de datos <span className="text-amber">SQL y NoSQL</span>
                   </p>
                 </Line>
 

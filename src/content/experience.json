@@ -1,6 +1,6 @@
 [
   {
-    "id": "exp-lead",
+    "id": "exp-mid2",
     "company": "Carta Sur",
     "role": "Backend Engineer",
     "period": "2025 — 2026",
@@ -9,8 +9,11 @@
     "summary": "Sistemas distribuidos, end-to-end: arquitectura, APIs, escalabilidad",
     "stack": ["React", ".NET","SQL", "PostgreSQL", "Redis", "AWS"],
     "highlights": [
-      "Diseño de arquitectura limpia",
-      "Trabaje en proyectos completos con tecnologias modernas y sistemas distribuidos altamente escalable"
+      "Desarrollo de microservicios backend utilizando .NET.",
+      "Integracion de sistemas con ElasticSearch, Vault, Redis, RabbitMQ, MassTransit y SignalR",
+      "Automatizacion de pipelines y despliegues con Jenkins y gestion de repositorios con GitLab",
+      "Colaboracion en equipos a giles bajo SCRUM, participando en diseño de arquitectura, escalabilidad y optimizacion de rendimiento",
+      "Mejora de la comunicacion entre servicios y reduccion de latencia en procesos críticos"
     ]
   },
   {
@@ -23,8 +26,12 @@
     "summary": "Construí features de punta a punta y dashboards internos con alto tráfico.",
     "stack": ["React", ".NET","SQL", "PostgreSQL", "MongoDB", "TypeScript", "Docker"],
     "highlights": [
-      "Migré el frontend legacy a una arquitectura de componentes reutilizables",
-      "Automaticé el pipeline de CI/CD, reduciendo el tiempo de deploy de 25 a 6 minutos"
+      "Desarrollo y mantenimiento de aplicaciones web con Blazor y .NET",
+      "Implementacion de interfaces con Angular, React.js y Tailwind CSS",
+      "Gestion de bases de datos MySQL, SQL Server y MongoDB",
+      "Participacion en equipos a giles bajo SCRUM",
+      "Optimizacion de rendimiento y mejoras en experiencia de usuario",
+      "Reduccion del tiempo de carga de una aplicacion interna en un 25%"
     ]
   },
   {
@@ -38,7 +45,11 @@
     "stack": ["JavaScript", "React", "Astro", "Tailwind"],
     "highlights": [
       "Entregué proyectos web responsivos y optimizados para SEO",
-      "Trabajé directo con clientes relevando requisitos y definiendo alcance"
+      "Trabajé directo con clientes relevando requisitos y definiendo alcance",
+      "Disen o y desarrollo de APIs REST para proyectos web y sistemas internos",
+      "Implementacion de backend con Node.js (Express / NestJS) y .NET, aplicando arquitectura en capas y separacion de responsabilidades",
+      "Integracion con bases de datos MySQL, Oracle y MongoDB, incluyendo modelado de datos y optimizacion de consultas",
+      " Desarrollo de autenticacion y autorizacion (JWT, manejo de roles y permisos)"
     ]
   }
 ]

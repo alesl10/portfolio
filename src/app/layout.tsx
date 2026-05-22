@@ -20,11 +20,11 @@ const pressStart = Press_Start_2P({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://alexislopez.dev"),
-  title: "Alexis López — Senior Full-Stack Engineer",
+  title: "Alexis López — SSR Backend Engineer",
   description:
-    "Senior Full-Stack Engineer. Diseño y construyo sistemas web escalables con React, Node.js, .NET y SQL. Arquitectura, performance y código mantenible.",
+    "SSR Backend Engineer. Diseño y construyo sistemas web escalables con React, Node.js, .NET y SQL. Arquitectura, performance y código mantenible.",
   keywords: [
-    "Senior Full-Stack",
+    "SSR Backend",
     "Software Engineer",
     "React",
     "Node.js",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Alexis López" }],
   openGraph: {
-    title: "Alexis López — Senior Full-Stack Engineer",
+    title: "Alexis López — SSR Backend Engineer",
     description:
       "Portfolio de ingeniería: proyectos, stack y trayectoria construyendo software a escala.",
     type: "website",
@@ -48,10 +48,6 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es" className={`h-full antialiased ${jetbrains.variable} ${pressStart.variable}`}>
-      <head>
-        {/* Anti-flash: aplica data-theme antes del primer paint */}
-        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem('portfolio-theme');if(t==='mario')document.documentElement.setAttribute('data-theme','mario')}catch(e){}` }} />
-      </head>
       <body className="grid-bg scanlines min-h-screen flex flex-col">
         <NavBar />
         <main className="flex-1">{children}</main>

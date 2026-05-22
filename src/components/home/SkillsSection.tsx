@@ -13,7 +13,7 @@ const categoryMeta: Record<string, { label: string; cmd: string }> = {
 }
 
 export default function SkillsSection({ skills }: SkillsSectionProps) {
-  const categories = (['frontend', 'backend', 'tools'] as const)
+  const categories = (['backend', 'frontend', 'tools'] as const)
     .map((key) => ({ key, items: skills.filter((s) => s.category === key) }))
     .filter((c) => c.items.length > 0)
 

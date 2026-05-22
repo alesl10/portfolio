@@ -2,8 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { FaGithub, FaLinkedin, FaGamepad, FaTerminal } from 'react-icons/fa'
-import { useTheme } from '@/hooks/useTheme'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const links = [
   { href: '/', label: 'home' },
@@ -13,7 +12,6 @@ const links = [
 
 export default function NavBar() {
   const pathname = usePathname()
-  const { theme, toggle, mounted } = useTheme()
 
   return (
     <nav className="sticky top-0 z-30 border-b border-line bg-base/85 backdrop-blur-md">
@@ -39,11 +37,10 @@ export default function NavBar() {
               <Link
                 key={href}
                 href={href}
-                className={`px-2.5 py-1 rounded text-[0.82rem] transition-colors ${
-                  active
+                className={`px-2.5 py-1 rounded text-[0.82rem] transition-colors ${active
                     ? 'text-green'
                     : 'text-muted hover:text-fg'
-                }`}
+                  }`}
               >
                 <span className={active ? 'text-green' : 'text-faint'}>/</span>
                 {label}
@@ -52,18 +49,6 @@ export default function NavBar() {
           })}
 
           <span className="w-px h-4 bg-line mx-1 sm:mx-2" />
-
-          {mounted && (
-            <button
-              onClick={toggle}
-              className="text-muted hover:text-green transition-colors p-1.5"
-              aria-label={theme === 'terminal' ? 'Mario mode' : 'Terminal mode'}
-              title={theme === 'terminal' ? 'Mario mode' : 'Terminal mode'}
-            >
-              {theme === 'mario' ? <FaTerminal size={15} /> : <FaGamepad size={15} />}
-            </button>
-          )}
-
           <a
             href="https://github.com/alesl10"
             target="_blank"
