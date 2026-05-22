@@ -1,0 +1,398 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design tokens — "Terminal / Engineering" aesthetic
+   Single source of truth (Tailwind v4 @theme). Generates
+   utilities like bg-base, text-green, border-line, font-mono.
+   ============================================================ */
+@theme {
+  /* surfaces */
+  --color-base: #080b0c;
+  --color-panel: #0e1416;
+  --color-panel-2: #131b1e;
+  --color-line: rgba(89, 233, 165, 0.12);
+  --color-line-strong: rgba(89, 233, 165, 0.32);
+
+  /* accents */
+  --color-green: #59e9a5;
+  --color-green-dim: #2f8f67;
+  --color-amber: #f5b340;
+  --color-cyan: #4cc9d6;
+  --color-magenta: #e06c9f;
+
+  /* text */
+  --color-fg: #d6e3dc;
+  --color-muted: #7d8f87;
+  --color-faint: #4a5852;
+
+  /* type */
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular",
+    "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
+
+  /* glow */
+  --shadow-glow: 0 0 0 1px rgba(89, 233, 165, 0.12),
+    0 0 24px -6px rgba(89, 233, 165, 0.35);
+  --shadow-glow-amber: 0 0 0 1px rgba(245, 179, 64, 0.14),
+    0 0 22px -6px rgba(245, 179, 64, 0.4);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+* {
+  /* margin: 0; */
+  /* padding: 0; */
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-fg);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "calt" 1, "ss01" 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-fg);
+  line-height: 1.05;
+}
+
+h1 { font-size: clamp(2.6rem, 8vw, 5.5rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+h3 { font-size: clamp(1.1rem, 2.5vw, 1.35rem); }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+
+::selection {
+  background-color: rgba(89, 233, 165, 0.22);
+  color: #eafff4;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background-color: var(--color-base); }
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-panel-2);
+  border: 1px solid var(--color-line);
+}
+::-webkit-scrollbar-thumb:hover { background-color: var(--color-green-dim); }
+* { scrollbar-color: var(--color-panel-2) var(--color-base); scrollbar-width: thin; }
+
+/* ============================================================
+   Atmosphere: grid + scanlines (fixed overlays)
+   ============================================================ */
+.grid-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(89, 233, 165, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(89, 233, 165, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 35%, transparent 100%);
+}
+
+.scanlines::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.16) 3px,
+    transparent 4px
+  );
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+}
+
+/* ============================================================
+   Type helpers
+   ============================================================ */
+.glow {
+  text-shadow: 0 0 18px rgba(89, 233, 165, 0.55), 0 0 4px rgba(89, 233, 165, 0.35);
+}
+.glow-amber {
+  text-shadow: 0 0 18px rgba(245, 179, 64, 0.5);
+}
+.kbd-label {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+/* Blinking block cursor */
+.blink-cursor::after {
+  content: "▮";
+  margin-left: 2px;
+  color: var(--color-green);
+  animation: blink 1.05s steps(1) infinite;
+}
+.cursor {
+  display: inline-block;
+  width: 0.62em;
+  height: 1.05em;
+  margin-left: 0.12em;
+  vertical-align: text-bottom;
+  background: var(--color-green);
+  box-shadow: 0 0 12px rgba(89, 233, 165, 0.6);
+  animation: blink 1.05s steps(1) infinite;
+}
+@keyframes blink { 0%, 50% { opacity: 1; } 50.01%, 100% { opacity: 0; } }
+
+/* ============================================================
+   Terminal window chrome
+   ============================================================ */
+.terminal-window {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(89, 233, 165, 0.025), transparent 120px),
+    var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--color-line);
+}
+.terminal-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.prompt::before {
+  content: "$";
+  color: var(--color-green);
+  margin-right: 0.6ch;
+  font-weight: 700;
+}
+.prompt-arrow::before {
+  content: "❯";
+  color: var(--color-green);
+  margin-right: 0.7ch;
+  font-weight: 700;
+}
+
+/* ============================================================
+   Components
+   ============================================================ */
+.card {
+  background-color: var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+.card:hover {
+  border-color: var(--color-line-strong);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 20px;
+  background-color: transparent;
+  color: var(--color-green);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 0.86rem;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background-color 0.18s ease, box-shadow 0.22s ease, transform 0.15s ease, color 0.18s ease;
+}
+.btn-primary:hover {
+  background-color: rgba(89, 233, 165, 0.1);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 20px;
+  background-color: transparent;
+  color: var(--color-muted);
+  border: 1px solid var(--color-line);
+  border-radius: 7px;
+  font-weight: 500;
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: color 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+}
+.btn-secondary:hover {
+  color: var(--color-fg);
+  border-color: var(--color-line-strong);
+  transform: translateY(-1px);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  background-color: rgba(89, 233, 165, 0.06);
+  color: var(--color-green);
+  border-radius: 5px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  border: 1px solid var(--color-line);
+}
+
+.section-container {
+  position: relative;
+  z-index: 2;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (min-width: 640px) {
+  .section-container { padding-left: 2rem; padding-right: 2rem; }
+}
+@media (min-width: 1024px) {
+  .section-container { padding-left: 3rem; padding-right: 3rem; }
+}
+
+/* ============================================================
+   Motion — staggered reveal on load (CSS fallback)
+   ============================================================ */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal { animation: fadeSlideUp 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+.reveal-delay-1 { animation-delay: 0.08s; opacity: 0; }
+.reveal-delay-2 { animation-delay: 0.16s; opacity: 0; }
+.reveal-delay-3 { animation-delay: 0.24s; opacity: 0; }
+.reveal-delay-4 { animation-delay: 0.32s; opacity: 0; }
+.reveal-delay-5 { animation-delay: 0.4s; opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Theme transition (applies to both themes)
+   ============================================================ */
+html {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ============================================================
+   Mario / Retro Gaming theme — "8-bit Night"
+   Overrides CSS custom properties at runtime.
+   Tailwind v4 utilities (text-green, bg-base, etc.) resolve
+   var(--color-*) so they update automatically on override.
+   ============================================================ */
+[data-theme="mario"] {
+  --color-base:         #000714;
+  --color-panel:        #050028;
+  --color-panel-2:      #220035;
+  --color-line:         rgba(40, 59, 231, 0.18);
+  --color-line-strong:  rgba(91, 40, 231, 0.45);
+  --color-green:        #60560c;
+  --color-green-dim:    #8b1010;
+  --color-amber:        #ffd700;
+  --color-cyan:         #5bc8fa;
+  --color-magenta:      #ff6b35;
+  --color-fg:           #f0e8ff;
+  --color-muted:        #9b8fb5;
+  --color-faint:        #4a3d5c;
+  --font-mono:          var(--font-pixel), "Press Start 2P", ui-monospace, monospace;
+  --shadow-glow:        4px 4px 0px #cc7d7d;
+  --shadow-glow-amber:  4px 4px 0px #b8860b;
+}
+
+/* Bordes cuadrados estilo 8-bit */
+[data-theme="mario"] .card,
+[data-theme="mario"] .terminal-window,
+[data-theme="mario"] .btn-primary,
+[data-theme="mario"] .btn-secondary,
+[data-theme="mario"] .tag { border-radius: 0; }
+
+[data-theme="mario"] .card { border-width: 2px; box-shadow: none; }
+[data-theme="mario"] .card:hover { box-shadow: var(--shadow-glow); }
+[data-theme="mario"] .terminal-window { border-width: 2px; }
+
+[data-theme="mario"] .btn-primary:hover {
+  box-shadow: 4px 4px 0px var(--color-green-dim);
+  transform: translateY(-2px);
+}
+
+/* Terminal dots → cuadrados con colores Mario */
+[data-theme="mario"] .terminal-dot { border-radius: 2px !important; }
+[data-theme="mario"] .terminal-dot:nth-child(1) { background: #e72828 !important; }
+[data-theme="mario"] .terminal-dot:nth-child(2) { background: #ffd700 !important; }
+[data-theme="mario"] .terminal-dot:nth-child(3) { background: #5bc8fa !important; }
+
+/* Experience timeline dot */
+[data-theme="mario"] .experience-dot {
+  background: var(--color-green) !important;
+  box-shadow: none !important;
+  border-radius: 2px !important;
+}
+[data-theme="mario"] .experience-dot[data-current="true"] {
+  box-shadow: 4px 4px 0px var(--color-green-dim) !important;
+}
+
+/* Glow → pixel shadow duro sin blur */
+[data-theme="mario"] .glow {
+  text-shadow: 3px 3px 0px var(--color-green-dim), -1px -1px 0px #000;
+}
+[data-theme="mario"] .glow-amber {
+  text-shadow: 3px 3px 0px #b8860b;
+}
+
+/* Fondo: campo de estrellas pixel en vez de grid verde */
+[data-theme="mario"] .grid-bg::before {
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.65) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 215, 0, 0.35) 1px, transparent 1px);
+  background-size: 60px 60px, 120px 120px;
+  background-position: 0 0, 30px 30px;
+  mask-image: none;
+}
+
+/* Font adjustments: Press Start 2P renderiza más grande que JetBrains Mono */
+[data-theme="mario"] body {
+  font-feature-settings: normal;
+  font-size: 13px;
+  line-height: 1.85;
+}
+[data-theme="mario"] h1 { font-size: clamp(1.2rem, 3.5vw, 2rem); font-feature-settings: normal; letter-spacing: 0.02em; }
+[data-theme="mario"] h2 { font-size: clamp(0.85rem, 2.2vw, 1.3rem); font-feature-settings: normal; letter-spacing: 0.02em; }
+[data-theme="mario"] h3 { font-size: clamp(0.65rem, 1.4vw, 0.85rem); font-feature-settings: normal; }
+
+/* Selection */
+[data-theme="mario"] ::selection { background-color: rgba(231, 40, 40, 0.3); color: #fff; }

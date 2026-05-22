@@ -1,0 +1,152 @@
+[
+  {
+    "id": "html",
+    "name": "HTML",
+    "category": "frontend",
+    "icon": "html-5-svgrepo-com.svg"
+  },
+  {
+    "id": "css",
+    "name": "CSS",
+    "category": "frontend",
+    "icon": "css-3-svgrepo-com.svg"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "category": "frontend",
+    "icon": "javascript-svgrepo-com.svg"
+  },
+  {
+    "id": "react",
+    "name": "React",
+    "category": "frontend",
+    "icon": "react-svgrepo-com.svg"
+  },
+  {
+    "id": "vite",
+    "name": "Vite",
+    "category": "frontend",
+    "icon": "vite-svgrepo-com.svg"
+  },
+  {
+    "id": "astro",
+    "name": "Astro",
+    "category": "frontend",
+    "icon": "astro-svgrepo-com.svg"
+  },
+  {
+    "id": "tailwind",
+    "name": "Tailwind CSS",
+    "category": "frontend",
+    "icon": "tailwind-svgrepo-com.svg"
+  },
+  {
+    "id": "blazor",
+    "name": "Blazor",
+    "category": "frontend",
+    "icon": "blazor-svgrepo-com.svg"
+  },
+  {
+    "id": "mongodb",
+    "name": "MongoDB",
+    "category": "backend",
+    "icon": "mongodb-svgrepo-com.svg"
+  },
+  {
+    "id": "nodejs",
+    "name": "Node.js",
+    "category": "backend",
+    "icon": "node-js-svgrepo-com.svg"
+  },
+  {
+    "id": "dotnet",
+    "name": ".NET",
+    "category": "backend",
+    "icon": "dotnet-svgrepo-com.svg"
+  },
+  {
+    "id": "csharp",
+    "name": "C#",
+    "category": "backend",
+    "icon": "c-sharp-svgrepo-com.svg"
+  },
+  {
+    "id": "sql",
+    "name": "SQL",
+    "category": "backend",
+    "icon": "sql-svgrepo-com.svg"
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "category": "backend",
+    "icon": "typescript-svgrepo-com.svg"
+  },
+  {
+    "id": "nestjs",
+    "name": "NestJS",
+    "category": "backend",
+    "icon": "nestjs-svgrepo-com.svg"
+  },
+  {
+    "id": "postgresql",
+    "name": "PostgreSQL",
+    "category": "backend",
+    "icon": "postgresql-svgrepo-com.svg"
+  },
+  {
+    "id": "redis",
+    "name": "Redis",
+    "category": "backend",
+    "icon": "redis-svgrepo-com.svg"
+  },
+  {
+    "id": "rabbitmq",
+    "name": "RabbitMQ",
+    "category": "backend",
+    "icon": "rabbitmq-svgrepo-com.svg"
+  },
+  {
+    "id": "elasticsearch",
+    "name": "Elasticsearch",
+    "category": "backend",
+    "icon": "elasticsearch-svgrepo-com.svg"
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "category": "tools",
+    "icon": "github-color-svgrepo-com.svg"
+  },
+  {
+    "id": "docker",
+    "name": "Docker",
+    "category": "tools",
+    "icon": "docker-svgrepo-com.svg"
+  },
+  {
+    "id": "kubernetes",
+    "name": "Kubernetes",
+    "category": "tools",
+    "icon": "kubernetes-svgrepo-com.svg"
+  },
+  {
+    "id": "swagger",
+    "name": "Swagger",
+    "category": "tools",
+    "icon": "swagger-svgrepo-com.svg"
+  },
+  {
+    "id": "postman",
+    "name": "Postman",
+    "category": "tools",
+    "icon": "postman-svgrepo-com.svg"
+  },
+  {
+    "id": "jira",
+    "name": "Jira",
+    "category": "tools",
+    "icon": "jira-svgrepo-com.svg"
+  }
+]

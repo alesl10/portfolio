@@ -1,0 +1,44 @@
+[
+  {
+    "id": "exp-lead",
+    "company": "Carta Sur",
+    "role": "Backend Engineer",
+    "period": "2025 — 2026",
+    "location": "Remoto · Buenos Aires, AR",
+    "current": true,
+    "summary": "Sistemas distribuidos, end-to-end: arquitectura, APIs, escalabilidad",
+    "stack": ["React", ".NET","SQL", "PostgreSQL", "Redis", "AWS"],
+    "highlights": [
+      "Diseño de arquitectura limpia",
+      "Trabaje en proyectos completos con tecnologias modernas y sistemas distribuidos altamente escalable"
+    ]
+  },
+  {
+    "id": "exp-mid",
+    "company": "Inspeccion General de Justicia",
+    "role": "Full-Stack Developer",
+    "period": "2023 — 2025",
+    "location": "Buenos Aires, AR",
+    "current": false,
+    "summary": "Construí features de punta a punta y dashboards internos con alto tráfico.",
+    "stack": ["React", ".NET","SQL", "PostgreSQL", "MongoDB", "TypeScript", "Docker"],
+    "highlights": [
+      "Migré el frontend legacy a una arquitectura de componentes reutilizables",
+      "Automaticé el pipeline de CI/CD, reduciendo el tiempo de deploy de 25 a 6 minutos"
+    ]
+  },
+  {
+    "id": "exp-junior",
+    "company": "Freelance",
+    "role": "Web Developer",
+    "period": "2020 — 2025",
+    "location": "Remoto",
+    "current": false,
+    "summary": "Desarrollo de sitios y aplicaciones a medida para pymes y emprendedores.",
+    "stack": ["JavaScript", "React", "Astro", "Tailwind"],
+    "highlights": [
+      "Entregué proyectos web responsivos y optimizados para SEO",
+      "Trabajé directo con clientes relevando requisitos y definiendo alcance"
+    ]
+  }
+]
